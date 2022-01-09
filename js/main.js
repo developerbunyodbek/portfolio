@@ -1,7 +1,8 @@
 const elLoader = document.querySelector("#preloader");
 const elToTop = document.querySelector(".back-to-top");
-const cursor = document.querySelector(".cursor");
-const cursorInner = document.querySelector(".cursor2");
+const elCursor = document.querySelector(".cursor");
+const elCursorInner = document.querySelector(".cursor2");
+const navbar = document.querySelector(".header");
 
 // PRELOADER
 window.addEventListener("load", function () {
@@ -19,22 +20,27 @@ window.addEventListener("scroll", () => {
 
 // CURSOR
 document.addEventListener("mousemove", function (e) {
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+  elCursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
 });
 
 document.addEventListener("mousemove", function (e) {
   var x = e.clientX;
   var y = e.clientY;
-  cursorInner.style.left = x + "px";
-  cursorInner.style.top = y + "px";
+  elCursorInner.style.left = x + "px";
+  elCursorInner.style.top = y + "px";
 });
 
 document.addEventListener("mousedown", function () {
-  cursor.classList.add("click");
-  cursorInner.classList.add("cursorinnerhover");
+  elCursor.classList.add("click");
+  elCursorInner.classList.add("cursorinnerhover");
 });
 
 document.addEventListener("mouseup", function () {
-  cursor.classList.remove("click");
-  cursorInner.classList.remove("cursorinnerhover");
+  elCursor.classList.remove("click");
+  elCursorInner.classList.remove("cursorinnerhover");
+});
+
+// NAVBAR
+window.addEventListener("scroll", function () {
+  navbar.classList.toggle("navbar-scroll", window.scrollY > 10);
 });

@@ -96,6 +96,7 @@ img {
   border: 1px solid #ffffff;
   transition: all 200ms ease-out;
   position: fixed;
+  z-index: 99999;
   pointer-events: none;
   left: 0;
   top: 0;
@@ -109,6 +110,7 @@ img {
   background-color: #ffffff;
   opacity: 0.3;
   position: fixed;
+  z-index: 99999;
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: width 0.3s, height 0.3s, opacity 0.3s;
@@ -145,6 +147,15 @@ img {
 
 .header {
   padding: 30px 0;
+  position: fixed;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.navbar-scroll {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px 0;
+  z-index: 999;
 }
 
 .site-header-container {
@@ -211,7 +222,7 @@ img {
 
 /* HERO */
 .hero {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -687,6 +698,9 @@ img {
     width: 650px;
     height: 800px;
   }
+  .about-image {
+    margin-right: 0;
+  }
 }
 
 @media only screen and (max-width: 760px) {
@@ -768,7 +782,7 @@ img {
     font-size: 36px;
   }
   .hero {
-    height: 83vh;
+    height: 100vh;
   }
   .hero-title {
     font-size: 40px;
