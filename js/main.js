@@ -1,12 +1,15 @@
-const elLoader = document.querySelector("#preloader");
+const elLoader = document.querySelector(".preloader");
 const elToTop = document.querySelector(".back-to-top");
 const elCursor = document.querySelector(".cursor");
 const elCursorInner = document.querySelector(".cursor2");
 const navbar = document.querySelector(".header");
 
 // PRELOADER
-window.addEventListener("load", function () {
-  elLoader.style.display = "none";
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    elLoader.style.opacity = "0";
+    elLoader.style.pointerEvents = "none";
+  }, 1000);
 });
 
 // TO TOP SCROLL
@@ -43,4 +46,13 @@ document.addEventListener("mouseup", function () {
 // NAVBAR
 window.addEventListener("scroll", function () {
   navbar.classList.toggle("navbar-scroll", window.scrollY > 10);
+});
+
+// TYPING ANIMATION
+var typed = new Typed("#element", {
+  // Waits 1000ms after typing "First"
+  strings: ["Web Developer", "FrontEnd Developer", "YouTuber", "Gamer"],
+  typeSpeed: 50,
+  backSpeed: 30,
+  loop: true,
 });
