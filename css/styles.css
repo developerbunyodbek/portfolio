@@ -241,7 +241,9 @@ img {
 }
 
 .header {
-  padding: 30px 0;
+  height: 15vh;
+  display: flex;
+  align-items: center;
   position: fixed;
   width: 100%;
   transition: all 0.3s ease;
@@ -249,7 +251,6 @@ img {
 
 .navbar-scroll {
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px 0;
   z-index: 999;
 }
 
@@ -260,7 +261,6 @@ img {
 }
 
 .site-header-logo {
-  flex-grow: 1;
   font-size: 24px;
   font-weight: bold;
   color: var(--white-color);
@@ -704,6 +704,23 @@ img {
   opacity: 1;
 }
 
+.nav-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.nav-btn div {
+  width: 30px;
+  margin: 6px;
+  height: 2px;
+  background-color: var(--white-color);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-active {
+  transform: translate(0)!important;
+}
+
 /* RETINA BACKGROUND */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min--moz-device-pixel-ratio: 2),
@@ -832,56 +849,43 @@ img {
   .container {
     width: 620px;
   }
-  .nav-btn {
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-  }
-  .nav-btn label {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 13px;
-  }
-  .nav-btn label span {
-    display: block;
-    width: 25px;
-    height: 10px;
-    border-top: 2px solid #eee;
-  }
   .sitenav {
     position: absolute;
-    display: block;
-    width: 100%;
+    right: 0;
+    transform: translateX(110%);
+    width: 50%;
     background-color: #000000ed;
-    height: 0px;
-    transition: all 0.3s ease-in;
-    overflow-y: hidden;
-    top: 50px;
-    left: 0px;
+    top: 15vh;
+    transition: transform 0.3s ease;
   }
   .sitenav-list {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .sitenav-item::after {
+    width: 0;
+    height: 0;
+  }
+  .nav-btn {
     display: block;
   }
-  .sitenav-item {
-    margin: 40px;
+  .toggle .line-1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line-2 {
+    opacity: 0;
+  }
+  .toggle .line-3 {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
   .skill {
     font-size: 50px;
   }
   .skill {
     font-size: 35px;
-  }
-  #nav-check:not(:checked) ~ .sitenav {
-    height: 0px;
-  }
-  #nav-check:checked ~ .sitenav {
-    height: calc(95.3vh - 50px);
-    overflow-y: auto;
-    margin-top: 25px;
-  }
-  .sitenav-item:hover::after {
-    width: 15px;
   }
   .works-box-image {
     width: 280px;
