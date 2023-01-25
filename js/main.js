@@ -23,28 +23,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// CURSOR
-document.addEventListener("mousemove", function (e) {
-  elCursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
-});
-
-document.addEventListener("mousemove", function (e) {
-  var x = e.clientX;
-  var y = e.clientY;
-  elCursorInner.style.left = x + "px";
-  elCursorInner.style.top = y + "px";
-});
-
-document.addEventListener("mousedown", function () {
-  elCursor.classList.add("click");
-  elCursorInner.classList.add("cursorinnerhover");
-});
-
-document.addEventListener("mouseup", function () {
-  elCursor.classList.remove("click");
-  elCursorInner.classList.remove("cursorinnerhover");
-});
-
 // NAVBAR
 window.addEventListener("scroll", function () {
   navbar.classList.toggle("navbar-scroll", window.scrollY > 10);
@@ -53,7 +31,7 @@ window.addEventListener("scroll", function () {
 // TYPING ANIMATION
 var typed = new Typed("#element", {
   // Waits 1000ms after typing "First"
-  strings: ["Web Developer", "FrontEnd Developer", "YouTuber", "Gamer"],
+  strings: ["FrontEnd Developer", "Blogger", "YouTuber", "Gamer"],
   typeSpeed: 50,
   backSpeed: 30,
   loop: true,
