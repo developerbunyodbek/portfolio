@@ -3,7 +3,7 @@ const elToTop = document.querySelector(".back-to-top");
 const elCursor = document.querySelector(".cursor");
 const elCursorInner = document.querySelector(".cursor2");
 const navbar = document.querySelector(".header");
-const navbarList = document.querySelector(".sitenav")
+const navbarList = document.querySelector(".sitenav");
 const btn = document.querySelector(".nav-btn");
 
 // PRELOADER
@@ -63,7 +63,7 @@ const navAnim = () => {
   btn.addEventListener("click", () => {
     navbarList.classList.toggle("nav-active");
     btn.classList.toggle("toggle");
-  })
-}
+  });
+};
 
 navAnim();
