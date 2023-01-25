@@ -415,6 +415,7 @@
                 <input
                   class="contact-form-input"
                   type="text"
+                  name="name"
                   placeholder="Your Name"
                   id="name"
                   required
@@ -426,6 +427,7 @@
                   type="email"
                   placeholder="Your Email"
                   id="email"
+                  name="email"
                   required
                 />
               </label>
@@ -435,10 +437,15 @@
                   type="password"
                   placeholder="Your Password"
                   id="password"
+                  name="password"
                   required
                 />
               </label>
-              <select class="contact-select contact-form-input" required>
+              <select
+                class="contact-select contact-form-input"
+                name="role[]"
+                required
+              >
                 <option value="developer" selected>Developer</option>
                 <option value="schoolby">Schoolby</option>
                 <option value="teacher">Teacher</option>
@@ -449,6 +456,7 @@
                 <textarea
                   class="contact-form-input contact-form-textarea"
                   id="massage"
+                  name="message"
                   placeholder="Your Massage"
                   required
                 ></textarea>
