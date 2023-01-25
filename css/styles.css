@@ -631,6 +631,7 @@ img {
   background-color: var(--primary-color);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
   color: #fff;
   display: inline-block;
   transition: color 0.3s linear;
